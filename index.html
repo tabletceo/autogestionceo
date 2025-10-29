@@ -3,108 +3,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Servicios CEOESP</title>
+  <title>Portal de Servicios CEO</title>
+
   <style>
+    /* --- ESTILOS GENERALES --- */
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #004B8D;
-      color: #333;
+      background-color: #004b8d; /* Fondo azul */
+    }
+
+    /* --- ENCABEZADO --- */
+    .header {
+      background-color: white; /* Franja blanca para resaltar el logo */
+      text-align: center;
+      padding: 25px 0;
     }
 
     .logo-container {
-      background-color: #004B8D;
-      text-align: center;
-      padding: 30px 0 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .logo-container img {
-      width: 220px;
-      height: auto;
+    .logo {
+      max-width: 200px;
+      margin-bottom: 10px;
     }
 
-    .white-section {
-      background-color: #fff;
-      border-radius: 30px 30px 0 0;
-      padding: 40px 20px 60px;
-      margin-top: -20px;
-    }
-
-    .cards-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 25px;
-      justify-items: center;
-    }
-
-    .card {
-      background-color: white;
-      border-radius: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      text-align: center;
-      padding: 25px;
-      width: 100%;
-      max-width: 220px;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-
-    .card:hover {
-      transform: scale(1.05);
-    }
-
-    .card img {
-      width: 90px;
-      height: 90px;
-      object-fit: contain;
-      margin-bottom: 15px;
-    }
-
-    .card h3 {
-      font-size: 18px;
-      color: #004B8D;
+    .bienvenido {
+      color: #004b8d;
       margin: 0;
+      font-size: 1.8rem;
       font-weight: 600;
     }
 
-    @media (max-width: 600px) {
-      .card img {
+    /* --- SECCIÓN PRINCIPAL --- */
+    .main-content {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 50px 20px;
+      background-color: #004b8d;
+    }
+
+    /* --- TARJETAS --- */
+    .tarjeta {
+      background-color: white;
+      border-radius: 20px;
+      width: 220px;
+      height: 200px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      padding: 25px 15px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .tarjeta:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .tarjeta img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 15px;
+    }
+
+    .tarjeta a {
+      display: block;
+      color: #004b8d;
+      text-decoration: none; /* Quita subrayado */
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .tarjeta a:hover {
+      color: #007bff;
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 768px) {
+      .tarjeta {
+        width: 180px;
+        height: 180px;
+      }
+
+      .tarjeta img {
         width: 70px;
         height: 70px;
       }
-      .card h3 {
-        font-size: 16px;
+
+      .bienvenido {
+        font-size: 1.5rem;
       }
     }
+
   </style>
 </head>
+
 <body>
-  <div class="logo-container">
-    <img src="img/logo.png" alt="Logo CEOESP">
-  </div>
-
-  <div class="white-section">
-    <div class="cards-container">
-      <a class="card" href="https://www.ceoesp.com.co/descarga-tu-factura" target="_blank">
-        <img src="img/estado.png" alt="Mi estado de cuenta">
-        <h3>Mi estado de cuenta</h3>
-      </a>
-
-      <a class="card" href="https://www.ceoesp.com.co/descarga-tu-factura" target="_blank">
-        <img src="img/factura.png" alt="Duplicado de factura">
-        <h3>Duplicado de factura</h3>
-      </a>
-
-      <a class="card" href="https://www.ceoesp.com.co/paga-tu-facturaa" target="_blank">
-        <img src="img/pago.png" alt="Pago en línea">
-        <h3>Pago en línea</h3>
-      </a>
-
-      <a class="card" href="https://www.ceoesp.com.co/registro-de-pqrs" target="_blank">
-        <img src="img/solicitud.png" alt="Solicitudes">
-        <h3>Solicitudes</h3>
-      </a>
+  <!-- ENCABEZADO -->
+  <header class="header">
+    <div class="logo-container">
+      <img src="./img/logo.png" alt="Logo CEO" class="logo">
+      <h1 class="bienvenido">¡Bienvenido!</h1>
     </div>
-  </div>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="main-content">
+    <div class="tarjeta">
+      <img src="./img/estado.png" alt="Estado de cuenta">
+      <a href="#">Mi estado de cuenta</a>
+    </div>
+
+    <div class="tarjeta">
+      <img src="./img/factura.png" alt="Duplicado de factura">
+      <a href="#">Duplicado de factura</a>
+    </div>
+
+    <div class="tarjeta">
+      <img src="./img/pago.png" alt="Pago en línea">
+      <a href="#">Pago en línea</a>
+    </div>
+
+    <div class="tarjeta">
+      <img src="./img/solicitudes.png" alt="Solicitudes">
+      <a href="#">Solicitudes</a>
+    </div>
+  </main>
 </body>
 </html>
