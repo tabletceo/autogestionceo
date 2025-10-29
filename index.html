@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -11,45 +11,41 @@
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background-color: #004b8d; /* Fondo azul */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
     }
 
     /* --- ENCABEZADO --- */
     .header {
-      background-color: white;
-      width: 100%;
+      background-color: white; /* Franja blanca para resaltar el logo */
       text-align: center;
-      padding: 30px 0;
+      padding: 25px 0;
+    }
+
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .logo {
-      width: 220px;
-      max-width: 80%;
-      display: block;
-      margin: 0 auto 10px auto;
+      max-width: 200px;
+      margin-bottom: 10px;
     }
 
     .bienvenido {
       color: #004b8d;
-      font-size: 2rem;
-      font-weight: 700;
-      margin: 10px 0 0 0;
-      text-align: center;
+      margin: 0;
+      font-size: 1.8rem;
+      font-weight: 600;
     }
 
     /* --- SECCIÓN PRINCIPAL --- */
     .main-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      justify-items: center;
-      gap: 40px;
-      padding: 60px 20px;
-      width: 100%;
-      max-width: 900px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 50px 20px;
+      background-color: #004b8d;
     }
 
     /* --- TARJETAS --- */
@@ -57,33 +53,30 @@
       background-color: white;
       border-radius: 20px;
       width: 220px;
-      height: 220px; /* cuadradas */
+      height: 200px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      transition: transform 0.3s, box-shadow 0.3s;
       text-align: center;
+      padding: 25px 15px;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .tarjeta:hover {
-      transform: scale(1.05);
+      transform: translateY(-5px);
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
     }
 
     .tarjeta img {
-      width: 100px;
-      height: 100px;
-      margin-bottom: 20px;
+      width: 80px;
+      height: 80px;
+      margin-bottom: 15px;
     }
 
     .tarjeta a {
       display: block;
       color: #004b8d;
-      text-decoration: none;
+      text-decoration: none; /* Quita subrayado */
       font-weight: 600;
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
 
     .tarjeta a:hover {
@@ -92,32 +85,31 @@
 
     /* --- RESPONSIVE --- */
     @media (max-width: 768px) {
-      .bienvenido {
-        font-size: 1.8rem;
-      }
-
       .tarjeta {
         width: 180px;
         height: 180px;
       }
 
       .tarjeta img {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
       }
 
-      .tarjeta a {
-        font-size: 1.1rem;
+      .bienvenido {
+        font-size: 1.5rem;
       }
     }
+
   </style>
 </head>
 
 <body>
   <!-- ENCABEZADO -->
   <header class="header">
-    <img src="./img/logo.png" alt="Logo CEO" class="logo">
-    <h1 class="bienvenido">¡Bienvenido!</h1>
+    <div class="logo-container">
+      <img src="./img/logo.png" alt="Logo CEO" class="logo">
+      <h1 class="bienvenido">¡Bienvenido!</h1>
+    </div>
   </header>
 
   <!-- CONTENIDO PRINCIPAL -->
@@ -144,3 +136,5 @@
   </main>
 </body>
 </html>
+
+
